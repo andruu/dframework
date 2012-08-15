@@ -15,6 +15,8 @@ router.get('/posts', function (req, res) {
 
 router.get('/users/\\S+', function (req, res) {
   var id = url.parse(req.url, true).pathname.split('/').last();
+  
+  // Set local variables for view
   locals = {
     id: id
   };
@@ -22,9 +24,9 @@ router.get('/users/\\S+', function (req, res) {
 });
 
 router.get('/login', function (req, res) {
-  res.end('trying to login brah!');
+  res.end('This is a get request to /login');
 });
 
 router.post('/login', function (req, res) {
-  res.end('POSTY: trying to login brah!');
+  res.end('This is a post request to /login');
 });
